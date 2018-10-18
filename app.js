@@ -1,9 +1,12 @@
 (function(){
 'use strict';
-angular.module('messageShower', [])
-.controller('messageShowerController', function($scope){
+angular.module('lunchCheck', [])
+.controller('lunchCheckController', lunchCheckController);
+   lunchCheckController.$inject=['$scope'];
+   function lunchCheckController($scope){
    $scope.textEntry="";
    $scope.message="";
+   
    $scope.displayMessage=function(){
        var retMessage=calculateSizeOfString($scope.textEntry);
        $scope.message=retMessage;
@@ -20,6 +23,7 @@ angular.module('messageShower', [])
        return sss;
        
    }
-});
+ }
+
 
 })();
